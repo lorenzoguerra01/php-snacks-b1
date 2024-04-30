@@ -243,6 +243,62 @@
                         i suoi voti scolastici. Stampare Nome, Cognome e la media dei voti di ogni alunno.
                         */
                         echo 'Snack 7' . '<br><br>';
+                        $students = [
+                            [
+                                'name' => 'Maria',
+                                'lastname' => 'Rossi',
+                                'votes' => [8, 9, 7, 6, 8]
+                            ],
+                            [
+                                'name' => 'Giovanni',
+                                'lastname' => 'Verdi',
+                                'votes' => [9, 10, 9, 8]
+                            ],
+                            [
+                                'name' => 'Lorenzo',
+                                'lastname' => 'Bianchi',
+                                'votes' => [7, 8, 9]
+                            ],
+                            [
+                                'name' => 'Sara',
+                                'lastname' => 'Neri',
+                                'votes' => [10, 8, 9, 10, 8]
+                            ],
+                            [
+                                'name' => 'Giulia',
+                                'lastname' => 'Rizzi',
+                                'votes' => [8, 8, 9, 8]
+                            ],
+                            [
+                                'name' => 'Alessandro',
+                                'lastname' => 'Ferrari',
+                                'votes' => [9, 9, 10, 9]
+                            ],
+                            [
+                                'name' => 'Marta',
+                                'lastname' => 'Vivaldi',
+                                'votes' => [8, 9, 9, 9]
+                            ],
+                            [
+                                'name' => 'Andrea',
+                                'lastname' => 'Rossi',
+                                'votes' => [10, 9, 10, 9, 8]
+                            ],
+                            [
+                                'name' => 'Antonio',
+                                'lastname' => 'Bianchi',
+                                'votes' => [8, 8, 8, 9, 9]
+                            ],
+                            [
+                                'name' => 'Lucia',
+                                'lastname' => 'Neri',
+                                'votes' => [8, 9, 9, 9, 9]
+                            ]
+                        ];
+                        foreach ($students as $student) {
+                            echo $student['name'] . ' ' . $student['lastname'] . ': ' . array_sum($student['votes']) / count($student['votes']) . '<br>';
+                        }
+
                         break;
                 }
             }
