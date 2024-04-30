@@ -1,7 +1,4 @@
 <?php
-if (isset($_GET['snacks'])) {
-    $snack = $_GET['snacks'];
-}
 ?>
 
 <!DOCTYPE html>
@@ -39,7 +36,7 @@ if (isset($_GET['snacks'])) {
     <div id="app" class="ms_screen text-center">
         <h1>PHP Snacks</h1>
         <div class="card ms_card">
-            <form action="index.php" method="get">
+            <form action="index.php" method="get" class=" p-3 ">
                 <select name="snacks">
                     <option value="">Select Snack</option>
                     <option value="snack1">1</option>
@@ -50,79 +47,115 @@ if (isset($_GET['snacks'])) {
                     <option value="snack6">6</option>
                     <option value="snack7">7</option>
                 </select>
-                <input type="submit">
+                <input type="submit" value="Submit">
             </form>
             <?php
-            switch ($snack) {
-                case 'snack1':
-/*
-Creiamo un array contenente le partite di basket di un’ipotetica tappa del calendario. Ogni array avrà una squadra di casa e una squadra ospite,
-unti fatti dalla squadra di casa e punti fatti dalla squadra ospite. Stampiamo a schermo tutte le partite con questo schema:
-Olimpia Milano - Cantù | 55-60
-*/
-                    echo 'Snack 1' . '<br><br>';
-                    $games = [
-                        ['HomeTeam' => 'Hawks', 'AwayTeam' => 'Timberwolves', 'HomeTeamScore' => 91, 'AwayTeamScore' => 86],
-                        ['HomeTeam' => 'Nuggets', 'AwayTeam' => 'Pacers', 'HomeTeamScore' => 97, 'AwayTeamScore' => 88],
-                        ['HomeTeam' => 'Warriors', 'AwayTeam' => 'Grizzlies', 'HomeTeamScore' => 106, 'AwayTeamScore' => 92],
-                        ['HomeTeam' => 'Spurs', 'AwayTeam' => 'Rockets', 'HomeTeamScore' => 98, 'AwayTeamScore' => 83],
-                        ['HomeTeam' => 'Pelicans', 'AwayTeam' => 'Clippers', 'HomeTeamScore' => 107, 'AwayTeamScore' => 86],
-                        ['HomeTeam' => 'Hornets', 'AwayTeam' => 'Trail Blazers', 'HomeTeamScore' => 104, 'AwayTeamScore' => 89],
-                        ['HomeTeam' => 'Kings', 'AwayTeam' => 'Jazz', 'HomeTeamScore' => 102, 'AwayTeamScore' => 85],
-                        ['HomeTeam' => 'Knicks', 'AwayTeam' => '76ers', 'HomeTeamScore' => 97, 'AwayTeamScore' => 82],
-                        ['HomeTeam' => 'Bucks', 'AwayTeam' => 'Bulls', 'HomeTeamScore' => 87, 'AwayTeamScore' => 81]
-                    ];
-                    foreach ($games as $game) {
-                        echo $game['HomeTeam'] . ' | ' . $game['HomeTeamScore'] . '-' . $game['AwayTeamScore'] . ' | ' . $game['AwayTeam'] . '<br>';
-                    }
-                    break;
+            if (isset($_GET['snacks'])) {
+                $snacks = $_GET['snacks'];
+                switch ($snacks) {
+                    case 'snack1':
+                        /*
+                        Creiamo un array contenente le partite di basket di un’ipotetica tappa del calendario. Ogni array avrà una squadra di casa e una squadra ospite,
+                        unti fatti dalla squadra di casa e punti fatti dalla squadra ospite. Stampiamo a schermo tutte le partite con questo schema:
+                        Olimpia Milano - Cantù | 55-60
+                        */
+                        echo 'Snack 1' . '<br><br>';
+                        $games = [
+                            ['HomeTeam' => 'Hawks', 'AwayTeam' => 'Timberwolves', 'HomeTeamScore' => 91, 'AwayTeamScore' => 86],
+                            ['HomeTeam' => 'Nuggets', 'AwayTeam' => 'Pacers', 'HomeTeamScore' => 97, 'AwayTeamScore' => 88],
+                            ['HomeTeam' => 'Warriors', 'AwayTeam' => 'Grizzlies', 'HomeTeamScore' => 106, 'AwayTeamScore' => 92],
+                            ['HomeTeam' => 'Spurs', 'AwayTeam' => 'Rockets', 'HomeTeamScore' => 98, 'AwayTeamScore' => 83],
+                            ['HomeTeam' => 'Pelicans', 'AwayTeam' => 'Clippers', 'HomeTeamScore' => 107, 'AwayTeamScore' => 86],
+                            ['HomeTeam' => 'Hornets', 'AwayTeam' => 'Trail Blazers', 'HomeTeamScore' => 104, 'AwayTeamScore' => 89],
+                            ['HomeTeam' => 'Kings', 'AwayTeam' => 'Jazz', 'HomeTeamScore' => 102, 'AwayTeamScore' => 85],
+                            ['HomeTeam' => 'Knicks', 'AwayTeam' => '76ers', 'HomeTeamScore' => 97, 'AwayTeamScore' => 82],
+                            ['HomeTeam' => 'Bucks', 'AwayTeam' => 'Bulls', 'HomeTeamScore' => 87, 'AwayTeamScore' => 81]
+                        ];
+                        foreach ($games as $game) {
+                            echo $game['HomeTeam'] . ' | ' . $game['HomeTeamScore'] . '-' . $game['AwayTeamScore'] . ' | ' . $game['AwayTeam'] . '<br>';
+                        }
+                        break;
 
-                case 'snack2':
-/*
-Con un form passare come parametri GET name, mail e age e verificare (cercando i metodi che non conosciamo nella documentazione) 
-che name sia più lungo di 3 caratteri, che mail contenga un punto e una chiocciola e che age sia un numero. 
-Se tutto è ok stampare “Accesso riuscito”, altrimenti “Accesso negato”
-*/
-                    echo 'Snack 2' . '<br><br>';
-                    break;
+                    case 'snack2':
+                        /*
+                        Con un form passare come parametri GET name, mail e age e verificare (cercando i metodi che non conosciamo nella documentazione) 
+                        che name sia più lungo di 3 caratteri, che mail contenga un punto e una chiocciola e che age sia un numero. 
+                        Se tutto è ok stampare “Accesso riuscito”, altrimenti “Accesso negato”
+                        */
+                        echo 'Snack 2' . '<br><br>';
+                        echo "<form action='index.php' method='get'>
+                        <input type='hidden' name='snacks' value='$snacks'>
+                        <input type='text' name='name' placeholder='name'>
+                        <input type='text' name='email' placeholder='email'>
+                        <input type='text' name='age' placeholder='age'>
+                            <input type='submit' value='Submit'>
+                        </form>";
+                        if (isset($_GET['name']) && isset($_GET['email']) && isset($_GET['age'])) {
+                            $name = $_GET['name'];
+                            $email = $_GET['email'];
+                            $age = $_GET['age'];
 
-                case 'snack3':
-/*
-Creare un array di array. Ogni array figlio avrà come chiave una data in questo formato: DD-MM-YYYY es 01-01-2007 e 
-come valore un array di post associati a quella data. Stampare ogni data con i relativi post.
-Qui l’array di esempio: https://www.codepile.net/pile/R2K5d68z
-*/  
-                    echo 'Snack 3' . '<br><br>';
-                    break;
+                            if (strlen($name) > 3) {
+                                echo "Name is valid.<br>";
+                            } else {
+                                echo "Name must be longer than 3 characters.<br>";
+                            }
 
-                case 'snack4':
-/*
-Creare un array con 15 numeri casuali, tenendo conto che l’array non dovrà contenere lo stesso numero più di una volta
-*/  
-                    echo 'Snack 4' . '<br><br>';
-                    break;
+                            if (strpos($email, '.') !== false && strpos($email, '@') !== false) {
+                                echo "Email is valid.<br>";
+                            } else {
+                                echo "Email must contain a dot and an @.<br>";
+                            }
 
-                case 'snack5':
-/*
-Prendere un paragrafo abbastanza lungo, contenente diverse frasi. Prendere il paragrafo e suddividerlo in tanti paragrafi. Ogni punto un nuovo paragrafo.
-*/  
-                    echo 'Snack 5' . '<br><br>';
-                    break;
+                            if (is_numeric($age)) {
+                                echo "Age is valid.<br>";
+                            } else {
+                                echo "Age must be a number.<br>";
+                            }
+                        }
 
-                case 'snack6':
-/*
-Utilizzare questo array: https://pastebin.com/CkX3680A. Stampiamo il nostro array mettendo gli insegnanti in un rettangolo grigio e i PM in un rettangolo verde.
-*/  
-                    echo 'Snack 6' . '<br><br>';
-                    break;
+                        break;
 
-                case 'snack7':
-/*
-Creare un array contenente qualche alunno di un’ipotetica classe. Ogni alunno avrà Nome, Cognome e un array contenente 
-i suoi voti scolastici. Stampare Nome, Cognome e la media dei voti di ogni alunno.
-*/  
-                    echo 'Snack 7' . '<br><br>';
-                    break;
+                    case 'snack3':
+                        /*
+                        Creare un array di array. Ogni array figlio avrà come chiave una data in questo formato: DD-MM-YYYY es 01-01-2007 e 
+                        come valore un array di post associati a quella data. Stampare ogni data con i relativi post.
+                        Qui l’array di esempio: https://www.codepile.net/pile/R2K5d68z
+                        */
+                        echo 'Snack 3' . '<br><br>';
+                        break;
+
+                    case 'snack4':
+                        /*
+                        Creare un array con 15 numeri casuali, tenendo conto che l’array non dovrà contenere lo stesso numero più di una volta
+                        */
+                        echo 'Snack 4' . '<br><br>';
+                        break;
+
+                    case 'snack5':
+                        /*
+                        Prendere un paragrafo abbastanza lungo, contenente diverse frasi. Prendere il paragrafo e suddividerlo in tanti paragrafi. 
+                        Ogni punto un nuovo paragrafo.
+                        */
+                        echo 'Snack 5' . '<br><br>';
+                        break;
+
+                    case 'snack6':
+                        /*
+                        Utilizzare questo array: https://pastebin.com/CkX3680A. Stampiamo il nostro array mettendo gli insegnanti in un rettangolo grigio e 
+                        i PM in un rettangolo verde.
+                        */
+                        echo 'Snack 6' . '<br><br>';
+                        break;
+
+                    case 'snack7':
+                        /*
+                        Creare un array contenente qualche alunno di un’ipotetica classe. Ogni alunno avrà Nome, Cognome e un array contenente 
+                        i suoi voti scolastici. Stampare Nome, Cognome e la media dei voti di ogni alunno.
+                        */
+                        echo 'Snack 7' . '<br><br>';
+                        break;
+                }
             }
             ?>
         </div>
