@@ -24,8 +24,6 @@
         defer></script>
     <!-- collegamento vue-js  -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <!-- collegamento my-js  -->
-    <script src="js/script.js" type="module" defer></script>
     <!-- collegamento libreria luxon  -->
     <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.4/build/global/luxon.min.js"></script>
     <!-- collegamento google font  -->
@@ -207,6 +205,36 @@
                         i PM in un rettangolo verde.
                         */
                         echo 'Snack 6' . '<br><br>';
+                        $db = [
+                            'teachers' => [
+                                [
+                                    'name' => 'Michele',
+                                    'lastname' => 'Papagni'
+                                ],
+                                [
+                                    'name' => 'Fabio',
+                                    'lastname' => 'Forghieri'
+                                ]
+                            ],
+                            'pm' => [
+                                [
+                                    'name' => 'Roberto',
+                                    'lastname' => 'Marazzini'
+                                ],
+                                [
+                                    'name' => 'Federico',
+                                    'lastname' => 'Pellegrini'
+                                ]
+                            ]
+                        ];
+                        foreach ($db as $type => $array) {
+                            foreach ($array as $item) {
+                                echo '<div style="background-color:'. ($type == 'teachers' ? 'lightgrey' : 'lightgreen') .'">';
+                                echo '<p>' . $item['name'] . ' ' . $item['lastname'] . '</p>';
+                                echo '</div>';
+                            }
+                        }
+                        
                         break;
 
                     case 'snack7':
