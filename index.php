@@ -192,6 +192,13 @@
                         Ogni punto un nuovo paragrafo.
                         */
                         echo 'Snack 5' . '<br><br>';
+                        $text = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras imperdiet, nunc sit amet imperdiet dictum, augue mi lobortis dolor, non finibus nibh mi in nulla. Nulla non libero non quam ultrices mattis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus ut tellus risus. Donec sed purus ut lectus mattis aliquet. Maecenas eleifend lectus eget malesuada auctor. Sed ut ex ut nulla aliquet malesuada.';
+                        $paragraphs = explode('. ', $text);
+                        var_dump($paragraphs);
+                        foreach ($paragraphs as $paragraph) {
+                            echo '<p>' . $paragraph . '.</p>';
+                        }
+
                         break;
 
                     case 'snack6':
