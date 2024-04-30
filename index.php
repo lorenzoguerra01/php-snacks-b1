@@ -123,6 +123,51 @@
                         Qui l’array di esempio: https://www.codepile.net/pile/R2K5d68z
                         */
                         echo 'Snack 3' . '<br><br>';
+                        $posts = [
+                            '01/03/2020' => [
+                                [
+                                    'title' => 'Hello World!',
+                                    'author' => 'Alice Smith',
+                                    'text' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+                                ],
+                                [
+                                    'title' => 'My first post',
+                                    'author' => 'Alice Smith',
+                                    'text' => 'Vestibulum nec lectus et lectus dignissim.'
+                                ],
+                            ],
+                            '02/03/2020' => [
+                                [
+                                    'title' => 'My second post',
+                                    'author' => 'Alice Smith',
+                                    'text' => 'Pellentesque aliquam leo sit amet quam blandit.'
+                                ],
+                            ],
+                            '03/03/2020' => [
+                                [
+                                    'title' => 'My third post',
+                                    'author' => 'Alice Smith',
+                                    'text' => 'Sed eu posuere felis, eget ultrices sapien.'
+                                ],
+                            ],
+                            '04/03/2020' => [
+                                [
+                                    'title' => 'My fourth post',
+                                    'author' => 'Alice Smith',
+                                    'text' => 'Sed ac augue risus.'
+                                ],
+                            ],
+                        ];
+
+                        foreach ($posts as $date => $postsArray) {
+                            echo "<h2>$date</h2>";
+                            foreach ($postsArray as $post) {
+                                echo "<h3>$post[title]</h3>";
+                                echo "<span>by $post[author]</span>";
+                                echo "<p>$post[text]</p>";
+                            }
+                        }
+
                         break;
 
                     case 'snack4':
